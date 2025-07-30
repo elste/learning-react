@@ -1,0 +1,38 @@
+# .gitignore for React project directories
+
+# Ignore node_modules in all subdirectories
+**/node_modules/
+
+# Ignore build outputs
+**/build/
+**/dist/
+
+# Ignore log files
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Ignore environment variable files
+**/.env
+**/.env.* 
+
+# Ignore coverage reports
+**/coverage/
+
+# Ignore editor directories and files
+**/.vscode/
+**/.idea/
+**/.DS_Store
+
+# Ignore local history for VSCode
+**/.history/
+
+# Ignore Mac system files
+**/.DS_Store
+
+# Ignore Windows system files
+**/Thumbs.db
+
+# Ignore package-lock and yarn lock files (optional, if you want to enforce a single lock file)
+# **/package-lock.json
+# **/yarn.lock
