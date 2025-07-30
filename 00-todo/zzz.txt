@@ -1,0 +1,15 @@
+TODO
+- features
+   - view list OK
+   - insert item OK
+   - select item (check) OK
+   - delete item OK
+   - edit item OK
+   - search
+- testing
+   - what is used?
+- style
+   - tailwind?
+
+
+https://copilot.microsoft.com/shares/dE1xFds4n2j1fhLfDf3Jm

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "src/*": ["./src/*"]
+    },
+    "lib": ["dom", "es2015", "esnext"] // ✅ aggiunto
+  }
+}
