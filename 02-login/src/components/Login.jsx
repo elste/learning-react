@@ -27,27 +27,35 @@ function Login() {
 
         try {
             setIsLoading(true);
-            await simulateHttpRequest(credentials)
-            alert('You are in')
+            const resp = await loginHttpRequest(credentials)
+            alert(`You are in with token: ${resp.token}`)
         } catch (error) {
-            alert('Authentication failed')
+            alert(`Authentication failed: ${error}`)
         } finally {
             setIsLoading(false);
         }
-
     }
 
-    async function simulateHttpRequest(credentials) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (credentials.username === credentials.password) {
-                    resolve();
-                }
-                else {
-                    reject();
-                }
-            }, 1000);
+    async function loginHttpRequest(credentials) {
+        const response = await fetch('https://httpbin.org/post', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(credentials)
         });
+
+        if (response.ok) {
+            const data = await response.json();
+            const { username, password } = data.json;
+
+            if (username === password) {
+                return {token: 'TKN-123456789'}
+            }
+            throw new Error('Credenziali non valide');
+
+        }
+        throw new Error('Errore durante la richiesta di login');
+
+
     }
 
 
