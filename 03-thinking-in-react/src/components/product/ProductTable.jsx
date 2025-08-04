@@ -2,8 +2,22 @@
 import ProductCategoryRow from '/src/components/product/ProductCategoryRow'
 import ProductItemRow from '/src/components/product/ProductItemRow'
 
-function ProductTable() {
+function ProductTable({ products }) {
+
+    let rows = []
+    let cat = null;
+
+    products.forEach(p => {
+        if (p.category != cat) {
+            rows = [...rows, (<ProductCategoryRow category={p.category}></ProductCategoryRow>)]
+            cat = p.category
+        }
+        
+        rows = [...rows, (<ProductItemRow product={p}></ProductItemRow>)]
+    });
+
     return (
+        <>
             <table className="product-table">
                 <thead>
                     <tr>
@@ -12,14 +26,10 @@ function ProductTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    <ProductCategoryRow />
-                    <ProductItemRow />
-                    <ProductItemRow />
-                    <ProductItemRow />
-                    <ProductCategoryRow />
-                    <ProductItemRow />
+                    {rows}
                 </tbody>
             </table>
+        </>
     )
 }
 

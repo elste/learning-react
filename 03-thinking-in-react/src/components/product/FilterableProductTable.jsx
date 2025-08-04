@@ -1,14 +1,14 @@
 import ProductFilter from '/src/components/product/ProductFilter'
 import ProductTable from '/src/components/product/ProductTable'
 
-function FilterableProductTable() {
+function FilterableProductTable({ products }) {
     return (
         <>
             <ProductFilter />
-            <ProductTable />
+            <ProductTable products={products} />
+
         </>
     )
 }
 
 export default FilterableProductTable;
-  
