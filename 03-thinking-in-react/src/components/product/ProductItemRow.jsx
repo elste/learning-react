@@ -1,10 +1,8 @@
 function ProductItemRow() {
     return (
-        <div>
-            <h1>ProductItemRow</h1>
-        </div>
+
+        <tr><td>name</td><td>price</td></tr>
     )
 }
 
 export default ProductItemRow;
-  

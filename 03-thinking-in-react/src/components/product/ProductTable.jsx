@@ -4,7 +4,6 @@ import ProductItemRow from '/src/components/product/ProductItemRow'
 
 function ProductTable() {
     return (
-        <div>
             <table className="product-table">
                 <thead>
                     <tr>
@@ -13,14 +12,15 @@ function ProductTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* Rows will be rendered here */}
+                    <ProductCategoryRow />
+                    <ProductItemRow />
+                    <ProductItemRow />
+                    <ProductItemRow />
+                    <ProductCategoryRow />
+                    <ProductItemRow />
                 </tbody>
             </table>
-            <ProductCategoryRow />
-            <ProductItemRow />
-        </div>
     )
 }
 
 export default ProductTable;
-  

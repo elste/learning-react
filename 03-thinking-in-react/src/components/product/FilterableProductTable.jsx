@@ -3,11 +3,10 @@ import ProductTable from '/src/components/product/ProductTable'
 
 function FilterableProductTable() {
     return (
-        <div>
-            
+        <>
             <ProductFilter />
             <ProductTable />
-        </div>
+        </>
     )
 }
 

@@ -1,10 +1,9 @@
 function ProductCategoryRow() {
     return (
-        <div>
-            <h1>ProductCategoryRow</h1>
-        </div>
+        <tr><td colSpan={2}>
+            <b>category</b>
+        </td></tr>
     )
 }
 
 export default ProductCategoryRow;
-  
