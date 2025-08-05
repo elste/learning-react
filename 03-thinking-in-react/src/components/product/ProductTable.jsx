@@ -9,11 +9,11 @@ function ProductTable({ products }) {
 
     products.forEach(p => {
         if (p.category != cat) {
-            rows = [...rows, (<ProductCategoryRow category={p.category}></ProductCategoryRow>)]
+            rows = [...rows, (<ProductCategoryRow category={p.category} key={p.category}></ProductCategoryRow>)]
             cat = p.category
         }
-        
-        rows = [...rows, (<ProductItemRow product={p}></ProductItemRow>)]
+
+        rows = [...rows, (<ProductItemRow product={p} key={p.name}></ProductItemRow>)]
     });
 
     return (
