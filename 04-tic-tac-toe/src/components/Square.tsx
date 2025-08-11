@@ -1,14 +1,11 @@
 type SquareProps = {
   value: string | null;
+  disabled: boolean | null
+  onValueChanged: () => void;
 };
 
-function Square({ value }: SquareProps) {
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log('click', e)
-  } 
-
-  return <button className="square" onClick={handleClick}>{value}</button>;
+function Square({ value, disabled, onValueChanged }: SquareProps) {
+  return <button className="square" onClick={onValueChanged} disabled={!!disabled}>{value}</button>;
 }
 
 export default Square
