@@ -50,26 +50,53 @@ export default function Board() {
 
   return (
     <>
-      {gameResult && <>
-        <div className="game-result">Result: {gameResult}</div>
-        <div><button onClick={handleReset}>Play again</button></div>
-      </>}
 
-      <div>Current player: {current}</div>
-      <div className="board-row">
-        <Square value={squares[0]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(0)} />
-        <Square value={squares[1]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(1)} />
-        <Square value={squares[2]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(2)} />
+      <div className="game-info">
+
+        {gameResult && <>
+          <div className="game-info-row">Result: {gameResult}</div>
+          <div className="game-info-row"><button onClick={handleReset}>Play again</button></div>
+        </>}
+
+        {!gameResult && <div className="game-info-row">Current player: {current}</div>
+        }
+
       </div>
-      <div className="board-row">
-        <Square value={squares[3]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(3)} />
-        <Square value={squares[4]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(4)} />
-        <Square value={squares[5]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(5)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[6]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(6)} />
-        <Square value={squares[7]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(7)} />
-        <Square value={squares[8]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(8)} />
+
+      <div className="grid">
+        <div className="row">
+          <div className="cell">
+            <Square value={squares[0]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(0)} />
+          </div>
+          <div className="cell">
+            <Square value={squares[1]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(1)} />
+          </div>
+          <div className="cell">
+            <Square value={squares[2]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(2)} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="cell">
+            <Square value={squares[3]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(3)} />
+          </div>
+          <div className="cell">
+            <Square value={squares[4]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(4)} />
+          </div>
+          <div className="cell">
+            <Square value={squares[5]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(5)} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="cell">
+            <Square value={squares[6]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(6)} />
+          </div>
+          <div className="cell">
+            <Square value={squares[7]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(7)} />
+          </div>
+          <div className="cell">
+            <Square value={squares[8]} disabled={!!gameResult} onValueChanged={() => handleValueChanged(8)} />
+          </div>
+        </div>
       </div>
     </>
   );
